@@ -1,0 +1,44 @@
+def home(request, UserDoesNotExist=None):
+if request.method == "POST":
+if request.POST["password1"] == request.POST["password2"]:
+try:
+user = User.objects.get( username=request.POST["username "])
+return render (request,'signup.html', {'error':'The username Has Already Been Taken !!'})
+except UserDoesNotExist:
+user = User.objects.create_user(request.POST["username "], password= request.POST["password1"])
+auth.login(request,user)
+return redirect ('home')
+else :
+return render (request, 'home.html')
+def signup(request):
+return render (request,"signup.html")
+def login(request):
+return render (request,'login.html')
+def logout(request):
+return render (request,'logout.html')
+
+
+def signup(request):
+if request.method == 'POST': # check if method is a post
+form = UserCreationForm(request.POST) # creates a form
+if form.is_valid(): # check if form is valid
+form.save() # saves the form if valid
+username = form.cleaned_data.get('username')
+raw_password = form.cleaned_data.get('password1')
+user = authenticate(username= username, password= password1)
+login(request, 'home ')
+else :
+form = UserCreationForm()
+return render (request,'signup.html',{'form':form})
+
+
+#
+{{ form.as_p }}
+
+
+
+<br>
+<button type="submit">
+    Sign Up !!
+
+</button>

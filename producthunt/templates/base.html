@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="cid:css-66af0e8f-dfd4-4338-bc2b-71f5f44ca0a9@mhtml.blink" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Griffins Kimutai </title>
+    
+    <!---link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/"> ---->
+    <link rel='stylesheet' href=' {% static 'font.css' %}'
+  </head>
+  <body>
+    <header>
+      <nav class=" navbar-light bg-light">
+          <div class="container">
+        <div class="container-fluid">
+          <div class="navbar-header">
+           
+            <a class="navbar-brand navbar-light bg-light" href="{% url 'home' %}">
+              
+              <img src="{% static 'logo2.jpg' %} " class="d-inline-block align-top  " height=30, width=30>
+             
+              Product Hunt
+            </a>
+          </div>
+          <div class="collapse navbar-collapse navbar-light bg-light" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+            
+             {% if user.is_authenticated %}
+             
+                <li ><a href=" {% url 'logout' %} ">Logout</a></li>
+              {% else %}
+             
+                <li ><a href="{% url 'signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+              {% endif %}
+             
+            </ul>
+           
+          </div>
+        </div>
+    </div>
+      </nav>
+          
+</header>
+<br>
+<div class="container">
+<div class='row'>
+<div class='col-12'>
+<p class='text-center'>  Hi {{user.username}} </p>
+  {% block content  %}
+  
+  {% endblock %}
+  </div>
+  </div>
+</div>
+
+
+
+<footer class="text-muted">
+  <div class="container text-center">
+     <p >
+     Have a happy {% now "Y" %}
+     </p>
+  </div>
+</footer>
+
+      
+
+</body>
+<!---Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<!----- Latest compiled JavaScript---->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</html>
+</body></html>
+
+
+ 
+
