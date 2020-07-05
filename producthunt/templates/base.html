@@ -4,11 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
+   
     <title>Griffins Kimutai </title>
     
     <!---link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/"> ---->
-    <link rel='stylesheet' href=' {% static 'font.css' %}'
+    <link rel='stylesheet' href=' {% static 'web-fonts-with-css/css/fontawesome.css' %}'>
+    <link rel='stylesheet' href=' {% static 'web-fonts-with-css/css/fa-brands.css' %}'>
+    <link rel='stylesheet' href=' {% static 'web-fonts-with-css/css/fontawesome-all.min.css' %}'>
+    
   </head>
   <body>
     <header>
@@ -28,7 +31,7 @@
             <ul class="nav navbar-nav navbar-right">
             
              {% if user.is_authenticated %}
-             
+                <li ><a href=" {% url 'create' %} "><i class='fa fa-plus-circle' ></i> Create </a></li>
                 <li ><a href=" {% url 'logout' %} ">Logout</a></li>
               {% else %}
              
@@ -48,7 +51,7 @@
 <div class="container">
 <div class='row'>
 <div class='col-12'>
-<p class='text-center'>  Hi {{user.username}} </p>
+
   {% block content  %}
   
   {% endblock %}

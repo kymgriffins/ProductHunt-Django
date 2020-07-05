@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p class='text-center' > Hi  {{user.username}} Create Something!</p>
+<br>
+<form method='POST' enctype='multipart/form-data' > 
+    {% csrf_token %}
+        {{form.as_p}}
+
+        <input class='btn btn-primary' type='submit' value='Add Product' >
+
+</form>
+ 
+
+
+{% endblock %}
