@@ -16,7 +16,7 @@ filelock==3.0.12
 gitdb==4.0.5
 GitPython==3.1.2
 idna==2.9
-Jinja2==2.11.2
+Jinja2==2.11.3
 jinja2-time==0.2.0
 Markdown @ file:///C:/Users/User/Markdown-3.2.2-py3-none-any.whl
 MarkupSafe==1.1.1
