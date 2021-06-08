@@ -20,7 +20,7 @@ Jinja2==2.11.2
 jinja2-time==0.2.0
 Markdown @ file:///C:/Users/User/Markdown-3.2.2-py3-none-any.whl
 MarkupSafe==1.1.1
-Pillow==7.1.2
+Pillow==8.2.0
 poyo==0.5.0
 python-dateutil==2.8.1
 python-git==2018.2.1
